@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>covid-19</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+  
+
+
+<!-- <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+     Covid-19 in Iraq!
+  </a>
+</nav> -->
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">covid-19 IN IRAQ</a>
+</nav>
+
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <td>Date</td>
+            <td>Confirmed</td>
+            <td>Deaths</td>
+            <td>Recovered</td>
+          </tr>
+        </thead>
+        <tbody id="IQ">
+       
+
+        </tbody>
+      </table>
+
+      <!-- <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <td>Date</td>
+            <td>Confirmed</td>
+            <td>Deaths</td>
+            <td>Recovered</td>
+          </tr>
+        </thead>
+        <tbody id="IT">
+       
+
+        </tbody>
+      </table> -->
+
+    </div>
+    
+    <style>
+      nav.navbar.navbar-light.bg-light {
+          background: #e2e2e2;
+          background-image: linear-gradient(to bottom left,#ececec,#e7e7e7,#dfdfdf);
+          position: fixed;
+          width: 100%;
+          top: 0pc;
+             
+      }
+      
+      
+      body {
+          background: #d4c930;
+      }
+      .table {
+          color: #f1f1f1 !important;
+          background: #536870;
+          margin-top: 5pc;
+          box-shadow: 0px 0px 8px 0px #202122a6;
+      }
+      
+      
+      thead {
+          background: #e2e2e2;
+          color: #000000 !important;
+      }
+      </style>
+
+<script>
+var texthtml="";
+ axios.get ('https://pomber.github.io/covid19/timeseries.json')
+  .then(function (response) {
+    // console.log(response.config);
+    for (var i = 0 ; i < response.data.Iraq.length; i++) {
+            texthtml+= `
+                <tr>
+                    <th scope="row">` + i + `</th>
+                    <th>  ` + response.data.Iraq[i].date + `</th>
+                    <th>  ` + response.data.Iraq[i].confirmed + `</th>
+                    <th>  ` + response.data.Iraq[i].deaths + `</th>
+                    <th>  ` + response.data.Iraq[i].recovered + `</th>
+                </tr>
+            `;
+    }
+     $("#IQ").html(texthtml);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
+
+
+
+
+
+//   var texthtml2="";
+//  axios.get ('https://pomber.github.io/covid19/timeseries.json')
+//   .then(function (response) {
+//     // console.log(response.config);
+//     for (var i = 0 ; i < response.data.Italy.length; i++) {
+//             texthtml2+= `
+//                 <tr>
+//                     <th scope="row">` + i + `</th>
+//                     <th>  ` + response.data.Italy[i].date + `</th>
+//                     <th>  ` + response.data.Italy[i].confirmed + `</th>
+//                     <th>  ` + response.data.Italy[i].deaths + `</th>
+//                     <th>  ` + response.data.Italy[i].recovered + `</th>
+//                 </tr>
+//             `;
+//     }
+//      $("#IT").html(texthtml2);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+
+</script>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
