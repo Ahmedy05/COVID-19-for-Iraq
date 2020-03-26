@@ -1,0 +1,41 @@
+nav.navbar.navbar-light.bg-light {
+    background: #e2e2e2;
+    background-image: linear-gradient(to bottom left,#ececec,#e7e7e7,#dfdfdf);
+    position: fixed;
+    width: 100%;
+    top: 0pc;
+       
+}
+
+
+body {
+    background: linear-gradient(to right, #200122, #6f0000);
+}
+.table {
+    color: #f1f1f1 !important;
+    background: #536870;
+    margin-top: 5pc;
+    box-shadow: 0px 0px 8px 0px #202122a6;
+    text-align: center;
+}
+
+
+thead {
+    background: #e2e2e2;
+    color: #000000 !important;
+}
+
+#gotopgae {
+    box-sizing: content-box;
+    text-align: center;
+    padding-top: 2%;
+}
+.mybutton {
+    color: #ffffff !important;
+}
+
+.topad {
+    padding-top: 2%;
+}
+
+#topad {padding-top: 2%;}
